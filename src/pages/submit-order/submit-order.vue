@@ -100,7 +100,7 @@
             <view class="prod-item">
               <view class="single-prod">
                 <view class="pic">
-                  <image :src="item.imgUrl" />
+                  <image :src="config.resourcesUrl+item.imgUrl" />
                 </view>
                 <view class="info">
                   <view class="name">{{ item.spuName }}</view>
@@ -164,6 +164,11 @@ const util = require('../../utils/util.js')
 const config = require('../../utils/config.js')
 import AddressPicker from '../../components/AddressPicker/index'
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   components: {
     AddressPicker
   },

@@ -9,16 +9,16 @@
       <view class="item">
         <input v-model="userName" type="text" class="text" placeholder="设置账户名称">
       </view>
-      <view v-if="errorTips == 4" class="error"><text class="error-icon">!</text>账号为4~16位字母、数字或下划线</view>
+      <view v-if="errorTips === 4" class="error"><text class="error-icon">!</text>账号为4~16位字母、数字或下划线</view>
       <view class="item">
         <input v-model="password" type="password" class="text" placeholder="设置登录密码">
       </view>
-      <view v-if="errorTips == 5" class="error"><text class="error-icon">!</text>密码由字母加数字或符号至少两种以上字符组成6-20位半角字符，区分大小写</view>
+      <view v-if="errorTips === 5" class="error"><text class="error-icon">!</text>密码由字母加数字或符号至少两种以上字符组成6-20位半角字符，区分大小写</view>
       <view class="item">
         <input v-model="confirmPwd" type="password" class="text" placeholder="再次输入密码" @input="validate">
       </view>
-      <view v-if="errorTips == 6" class="error"><text class="error-icon">!</text>确认密码不能为空</view>
-      <view v-if="errorTips == 7" class="error"><text class="error-icon">!</text>两次输入的密码不一致，请重新输入</view>
+      <view v-if="errorTips === 6" class="error"><text class="error-icon">!</text>确认密码不能为空</view>
+      <view v-if="errorTips === 7" class="error"><text class="error-icon">!</text>两次输入的密码不一致，请重新输入</view>
       <view class="btn" @tap="getRegister">注册</view>
     </view>
     <!-- 注册成功 -->

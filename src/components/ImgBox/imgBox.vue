@@ -5,18 +5,18 @@
     <view class="content">
       <view class="tit-top">
         <view class="tit">上传图片</view>
-        <view class="close" @click="close">×</view>
+        <view class="close" @tap="close">×</view>
       </view>
       <view class="upload">
-        <view v-if="!tempFilePaths.length" class="upload-chequer" @click="getUploadImg">
+        <view v-if="!tempFilePaths.length" class="upload-chequer" @tap="getUploadImg">
           <view class="cross">＋</view>
         </view>
         <view v-if="tempFilePaths.length" class="preview">
-          <image v-for="item in tempFilePaths" :key="item" :src="item" @click="getUploadImg" />
+          <image v-for="item in tempFilePaths" :key="item" :src="item" @tap="getUploadImg" />
         </view>
 
         <view class="foot-btn">
-          <span :class="['btn', tempFilePaths.length ? '' : 'gray']" @click="beforeUpload">确认</span>
+          <span :class="['btn', tempFilePaths.length ? '' : 'gray']" @tap="beforeUpload">确认</span>
         </view>
       </view>
     </view>

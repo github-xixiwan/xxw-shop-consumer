@@ -19,7 +19,7 @@
       <view class="shop-info-box">
         <view class="con">
           <view class="logo">
-            <image :src="shopInfo.shopLogo" />
+            <image :src="config.resourcesUrl+shopInfo.shopLogo" />
           </view>
           <view class="text">
             <view class="name">{{ shopInfo.shopName }}</view>
@@ -42,7 +42,7 @@
       <block v-for="(item, index) in prodList" :key="index">
         <view class="item" @tap="toProdDetail(item.spuId)">
           <view class="img">
-            <image :src="item.mainImgUrl" />
+            <image :src="config.resourcesUrl+item.mainImgUrl" />
           </view>
           <view class="text-box">
             <view class="name">{{ item.spuName }}</view>
@@ -70,7 +70,7 @@
         <view class="item">
           <view class="shop-info">
             <view class="logo">
-              <image :src="item.shopLogo" />
+              <image :src="config.resourcesUrl+item.shopLogo" />
             </view>
             <view class="text">
               <view class="name">{{ item.shopName }}</view>
@@ -84,7 +84,7 @@
             <block v-for="(prodItem, prodIndex) in item.spuList" :key="prodIndex">
               <view class="p-item" @tap="toProdDetail(prodItem.spuId)">
                 <view class="img">
-                  <image :src="prodItem.mainImgUrl" />
+                  <image :src="config.resourcesUrl+prodItem.mainImgUrl" />
                 </view>
                 <view class="price">￥{{ wxs.parsePrice(prodItem.priceFee)[0] + '.' + wxs.parsePrice(prodItem.priceFee)[1] }}</view>
               </view>
@@ -107,8 +107,14 @@
 <script module="wxs" lang="wxs" src="../../wxs/index.wxs"></script>
 <script>
 const http = require('../../utils/http.js')
+const config = require('../../utils/config.js')
 
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   data() {
     return {
       isLineProds: true, // 列表格式，默认横排展示

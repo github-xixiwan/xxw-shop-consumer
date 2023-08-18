@@ -29,7 +29,7 @@
         </view>
         <view v-if="errorTips == 5" class="error"><text class="error-icon">!</text>请输入验证码</view>
       </view>
-      <view class="btn" @click="login">登录</view>
+      <view class="btn" @tap="login">登录</view>
     </view>
   </view>
 </template>

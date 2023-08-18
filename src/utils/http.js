@@ -48,7 +48,6 @@ function request(params) {
       // A00003 无法读取获取请求参数
       // A00005 服务器出了点小差
       if (responseData.code === 'A00001' || responseData.code === 'A00003') {
-        console.log(responseData.code === 'A00001')
         uni.showToast({
           title: responseData.message || 'Error',
           icon: 'none'

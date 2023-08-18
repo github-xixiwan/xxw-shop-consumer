@@ -24,7 +24,7 @@
         circular="true"
       >
         <swiper-item v-for="(imgItem, imgIdx) in indexImgs" :key="imgIdx" class="item" @tap="toProdDetail(imgItem.spuId)">
-          <image :src="imgItem.imgUrl" />
+          <image :src="config.resourcesUrl+imgItem.imgUrl" />
         </swiper-item>
       </swiper>
     </view>
@@ -93,7 +93,7 @@
       <block v-for="(item, index) in categoryProdList" :key="index">
         <view class="item" @tap="toProdDetail(item.spuId)">
           <view class="img">
-            <image :src="item.mainImgUrl" />
+            <image :src="config.resourcesUrl+item.mainImgUrl" />
           </view>
           <view class="text-box">
             <view class="name">{{ item.spuName }}</view>
@@ -125,9 +125,14 @@
 const http = require('../../utils/http.js')
 const cartCount = require('../../utils/cart-count.js')
 const util = require('../../utils/util.js')
-import config from '../../utils/config.js'
+const config = require('../../utils/config.js')
 import Wechat from '../../utils/wechat.js'
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   data() {
     return {
       picDomain: config.picDomain, // 图片前缀

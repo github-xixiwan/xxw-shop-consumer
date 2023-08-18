@@ -19,7 +19,7 @@
       <block v-for="(item, index) in prodList" :key="index">
         <view class="item" @tap="toDetail(item.spuId)">
           <view class="img">
-            <image :src="item.mainImgUrl" />
+            <image :src="config.resourcesUrl+item.mainImgUrl" />
           </view>
           <view class="text-box">
             <view class="name">{{ item.spuName }}</view>
@@ -49,8 +49,14 @@
 
 <script>
 const http = require('../../utils/http.js')
+const config = require('../../utils/config.js')
 
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   data() {
     return {
       // 查询的参数

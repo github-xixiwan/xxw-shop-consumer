@@ -17,7 +17,7 @@
       circular="true"
     >
       <swiper-item v-for="(img, imgIdx) in imgList" :key="imgIdx" class="item">
-        <image :src="img" />
+        <image :src="config.resourcesUrl+img" />
       </swiper-item>
     </swiper>
 
@@ -56,7 +56,7 @@
       <view class="shop-info">
         <view class="info">
           <view class="img">
-            <image :src="shopInfo.shopLogo" />
+            <image :src="config.resourcesUrl+shopInfo.shopLogo" />
           </view>
           <view class="text">
             <view class="name">{{ shopInfo.shopName }}</view>
@@ -107,7 +107,7 @@
       <view class="popup-con-bottom check-sku">
         <view class="goods-box">
           <view class="img">
-            <image :src="prodInfo.mainImgUrl" />
+            <image :src="config.resourcesUrl+prodInfo.mainImgUrl" />
           </view>
           <view class="info">
             <view class="name">{{ prodInfo.name }}</view>
@@ -154,8 +154,14 @@
 <script>
 const http = require('../../utils/http.js')
 const util = require('../../utils/util')
+const config = require('../../utils/config.js')
 
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   props: {},
   data() {
     return {

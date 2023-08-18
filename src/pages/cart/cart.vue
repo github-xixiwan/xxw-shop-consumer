@@ -33,7 +33,7 @@
                 <view v-for="(prodItem, prodIndex) in shopItem.shopCartItem" :key="prodIndex" class="prod-box" @tap="toProdDetail(prodItem.spuId)">
                   <checkbox class="check" color="#fff" :checked="prodItem.isChecked ? true : false" @tap.stop="handleProdItemSelect(shopIndex,prodIndex)" />
                   <view class="prod-img">
-                    <image :src="prodItem.imgUrl" />
+                    <image :src="config.resourcesUrl+prodItem.imgUrl" />
                   </view>
                   <view class="prod-info">
                     <view class="name">{{ prodItem.spuName }}</view>
@@ -93,7 +93,7 @@
       <view class="popup-con-bottom check-sku">
         <view class="goods-box">
           <view class="img">
-            <image :src="defaultSku?defaultSku.imgUrl : prodInfo.mainImgUrl" />
+            <image :src="config.resourcesUrl+defaultSku?defaultSku.imgUrl : prodInfo.mainImgUrl" />
           </view>
           <view class="info">
             <view class="name">{{ prodInfo.name }}</view>
@@ -135,7 +135,11 @@ const cartCount = require('../../utils/cart-count.js')
 const config = require('../../utils/config.js')
 
 export default {
-
+  computed: {
+    config() {
+      return config
+    }
+  },
   components: {},
   props: {},
   data() {

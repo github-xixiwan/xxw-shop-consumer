@@ -4,7 +4,7 @@
       <view class="item" @tap="getUploadImg()">
         <view class="text">头像</view>
         <view class="img">
-          <image v-if="userInfo.pic" :src="userInfo.pic" />
+          <image v-if="userInfo.pic" :src="config.resourcesUrl+userInfo.pic" />
           <image v-else src="/static/images/head-sculpture.png" />
         </view>
         <view class="text-arrow" />
@@ -24,16 +24,22 @@
         <view class="text-arrow" />
       </view>
     </view>
-    <view class="login-out" @click="loginOut">退出登录</view>
+    <view class="login-out" @tap="loginOut">退出登录</view>
     <!-- 上传图片 -->
     <img-box v-if="showImgBoxPopup" ref="imgbox" class="imgbox-pop" @closeImgPop="ImgBoxPopVisible" />
   </view>
 </template>
 
 <script>
+import config from "@/utils/config";
 var http = require('../../utils/http')
 import imgBox from '../../components/ImgBox/imgBox'
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   components: {
     imgBox
   },

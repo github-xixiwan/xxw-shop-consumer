@@ -11,7 +11,7 @@
       <!-- 店铺信息 -->
       <view class="shop-info">
         <view class="logo">
-          <image :src="shopInfo.shopLogo" />
+          <image :src="config.resourcesUrl+shopInfo.shopLogo" />
         </view>
         <view class="text-box">
           <view class="name">{{ shopInfo.shopName }}</view>
@@ -34,7 +34,7 @@
           <block v-for="(item,index) in prodList" :key="index">
             <view class="item" @tap="detail(item.spuId)">
               <view class="img">
-                <image :src="item.mainImgUrl" />
+                <image :src="config.resourcesUrl+item.mainImgUrl" />
               </view>
               <view class="text-box">
                 <view class="name">{{ item.spuName }}</view>
@@ -80,8 +80,14 @@
 </template>
 
 <script>
+const config = require('../../utils/config.js')
 const http = require('../../utils/http.js')
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   filters: {
     price(value) {
       return (value / 100).toFixed(2)

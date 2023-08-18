@@ -12,7 +12,7 @@
       <view class="label">商家账号</view>
       <input v-model="shopUserName" type="text" :disabled="applyVisible" class="input" placeholder="请输入账号">
       <view v-if="errorTips === 6" class="error-tips"><text class="error-icon">!</text>商家账号不能为空</view>
-      <view v-if="errorTips == 11" class="error"><text class="error-icon">!</text>账号为4~16位字母、数字或下划线</view>
+      <view v-if="errorTips === 11" class="error"><text class="error-icon">!</text>账号为4~16位字母、数字或下划线</view>
     </view>
     <view v-if="!applyVisible" class="item">
       <view class="label">商家密码</view>
@@ -103,8 +103,8 @@
     </view>
 
     <view class="item">
-      <view v-if="!applyVisible" class="btn" @click="examineShopName">提交申请</view>
-      <!-- <view v-if="applyVisible" class="btn" @click="modifyInfo">修改信息</view> -->
+      <view v-if="!applyVisible" class="btn" @tap="examineShopName">提交申请</view>
+      <!-- <view v-if="applyVisible" class="btn" @tap="modifyInfo">修改信息</view> -->
     </view>
     <view class="item">
       <view
@@ -326,6 +326,13 @@ export default {
      */
     examineShopName() {
       if (this.applyVisible) {
+        return
+      }
+      if (!this.shopName){
+        uni.showToast({
+          title: '店铺名为空',
+          icon: 'none'
+        })
         return
       }
       var params = {

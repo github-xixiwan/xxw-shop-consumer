@@ -58,7 +58,7 @@
         <view class="prod-item" @tap="toProdDetail(prodItem.spuId)">
           <view class="info">
             <view class="prod-img">
-              <image :src="prodItem.pic" />
+              <image :src="config.resourcesUrl+prodItem.pic" />
             </view>
             <view class="text-box">
               <view
@@ -137,6 +137,11 @@ const http = require('../../utils/http.js')
 const config = require('../../utils/config.js')
 import uniCopy from '../../js_sdk/uni-copy'
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   data() {
     return {
       orderId: '',
