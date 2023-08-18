@@ -120,9 +120,14 @@
 <script>
 const http = require('../../utils/http.js')
 import util from '../../utils/util.js'
-
+const config = require('../../utils/config.js')
 import imgBox from '../../components/ImgBox/imgBox'
 export default {
+  computed: {
+    config() {
+      return config
+    }
+  },
   components: {
     imgBox
   },
@@ -171,15 +176,15 @@ export default {
             this.shopName = res.shopName
             this.intro = res.intro
             this.shopUserName = res.username
-            this.shopLogo = res.shopLogo
+            this.shopLogo = config.resourcesUrl+res.shopLogo
             this.shopLogoUrl = res.shopLogo
-            this.idCardFront = res.identityCardFront
+            this.idCardFront = config.resourcesUrl+res.identityCardFront
             this.idCardFrontUrl = res.identityCardFront
-            this.idCardBack = res.identityCardLater
+            this.idCardBack = config.resourcesUrl+res.identityCardLater
             this.idCardBackUrl = res.identityCardLater
-            this.license = res.businessLicense
+            this.license = config.resourcesUrl+res.businessLicense
             this.licenseUrl = res.businessLicense
-            this.mobileBackground = res.mobileBackgroundPic
+            this.mobileBackground = config.resourcesUrl+res.mobileBackgroundPic
             this.mobileBackgroundPic = res.mobileBackgroundPic
             // this.getShopAudit(res.shopStatus)
           } else {
