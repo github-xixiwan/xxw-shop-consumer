@@ -14,7 +14,7 @@
           <view class="text-box">
             <view class="name">{{ shopInfo.shopName }}</view>
             <view class="focus-box">
-              <view v-if="shopInfo.type" class="self">自营</view>
+              <view v-if="shopInfo.type === 1" class="self">自营</view>
             </view>
           </view>
         </view>

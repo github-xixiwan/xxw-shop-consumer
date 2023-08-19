@@ -85,6 +85,7 @@ export default {
         method: 'GET',
         data: this.pageQuery,
         callBack: res => {
+          console.log(res)
           this.hotSearchList = res
         }
       }

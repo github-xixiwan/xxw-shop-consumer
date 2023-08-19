@@ -33,7 +33,7 @@
                 <view v-for="(prodItem, prodIndex) in shopItem.shopCartItem" :key="prodIndex" class="prod-box" @tap="toProdDetail(prodItem.spuId)">
                   <checkbox class="check" color="#fff" :checked="prodItem.isChecked ? true : false" @tap.stop="handleProdItemSelect(shopIndex,prodIndex)" />
                   <view class="prod-img">
-                    <image :src="config.resourcesUrl+prodItem.imgUrl" />
+                    <image :src="prodItem.imgUrl" />
                   </view>
                   <view class="prod-info">
                     <view class="name">{{ prodItem.spuName }}</view>

@@ -4,8 +4,7 @@
       <!-- 头部 -->
       <view class="header">
         <view class="bg">
-          <image v-if="shopInfo.mobileBackgroundPic" :src="shopInfo.mobileBackgroundPic" />
-          <image v-else src="/static/img/banner3.png" />
+          <image :src="config.resourcesUrl+shopInfo.mobileBackgroundPic" />
         </view>
       </view>
       <!-- 店铺信息 -->
