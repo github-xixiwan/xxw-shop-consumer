@@ -100,7 +100,7 @@
             <view class="prod-item">
               <view class="single-prod">
                 <view class="pic">
-                  <image :src="config.resourcesUrl+item.imgUrl" />
+                  <image :src="item.imgUrl" />
                 </view>
                 <view class="info">
                   <view class="name">{{ item.spuName }}</view>
@@ -182,7 +182,7 @@ export default {
       popContent: {
         content: ''
       },
-      totalRow: 0,
+      total: 0,
       actualTotal: 0,
       shopCartOrders: [],
       orderReduce: 0,
