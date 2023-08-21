@@ -69,7 +69,7 @@ export default {
     addAddress() {
       if (this.addressList.length === 10) {
         uni.showToast({
-          title: this.i18n.addNewAddressTips,
+          title: '最多只能新建10个地址',
           icon: 'none'
         })
       } else {

@@ -182,7 +182,7 @@ export default {
               this.orderPay()
             } else if (res.cancel) {
               uni.showToast({
-                title: this.i18n.cancelBalancePay,
+                title: '取消支付',
                 icon: 'none',
                 duration: 1500
               });
