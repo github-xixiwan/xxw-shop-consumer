@@ -9,7 +9,7 @@
         <view class="bg-mask" />
         <view class="shop-info">
           <view class="logo">
-            <image :src="config.resourcesUrl+shopInfo.shopLogo" />
+            <image :src="shopInfo.shopLogo" />
           </view>
           <view class="text-box">
             <view class="name">{{ shopInfo.shopName }}</view>
@@ -34,7 +34,7 @@
           <!-- 右侧内容 -->
           <view class="subclass">
             <view v-if="firstCategoryList.length" class="adv-img">
-              <image :src="config.resourcesUrl+firstCategoryList[selectedIndex].imgUrl" />
+              <image :src="firstCategoryList[selectedIndex].imgUrl" />
             </view>
             <block v-for="(secondCategory, index) in secondCategoryList" :key="index">
               <view class="sub-con">
@@ -42,7 +42,7 @@
                 <view class="third-menu">
                   <view class="item" :data-categoryid="secondCategory.categoryId" :data-name="secondCategory.name" @tap="toSearchListPage">
                     <view class="img">
-                      <image :src="config.resourcesUrl+secondCategory.imgUrl" />
+                      <image :src="secondCategory.imgUrl" />
                     </view>
                     <view class="text">{{ secondCategory.name }}</view>
                   </view>

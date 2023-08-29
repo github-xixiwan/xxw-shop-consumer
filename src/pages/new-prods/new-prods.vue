@@ -19,7 +19,7 @@
       <block v-for="(item, index) in prodList" :key="index">
         <view class="item" @tap="toDetail(item.spuId)">
           <view class="img">
-            <image :src="config.resourcesUrl+item.mainImgUrl" />
+            <image :src="item.mainImgUrl" />
           </view>
           <view class="text-box">
             <view class="name">{{ item.spuName }}</view>

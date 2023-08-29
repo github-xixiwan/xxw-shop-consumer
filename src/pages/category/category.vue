@@ -20,7 +20,7 @@
       <!-- 右侧内容 -->
       <view class="subclass">
         <view v-if="firstCategoryList.length" class="adv-img">
-          <image :src="config.resourcesUrl+firstCategoryList[selectedIndex].imgUrl" />
+          <image :src="firstCategoryList[selectedIndex].imgUrl" />
         </view>
         <block v-for="(secondCategory, index) in secondCategoryList" :key="index">
           <view class="sub-con">
@@ -29,7 +29,7 @@
               <block v-for="(thirdCategory, subIndex) in secondCategory.categories" :key="subIndex">
                 <view class="item" :data-categoryid="thirdCategory.categoryId" :data-name="thirdCategory.name" @tap="toSearchListPage">
                   <view class="img">
-                    <image :src="config.resourcesUrl+thirdCategory.imgUrl" />
+                    <image :src="thirdCategory.imgUrl" />
                   </view>
                   <view class="text">{{ thirdCategory.name }}</view>
                 </view>

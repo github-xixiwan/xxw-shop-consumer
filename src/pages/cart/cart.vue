@@ -93,7 +93,7 @@
       <view class="popup-con-bottom check-sku">
         <view class="goods-box">
           <view class="img">
-            <image :src="config.resourcesUrl+defaultSku?defaultSku.imgUrl : prodInfo.mainImgUrl" />
+            <image :src="defaultSku?defaultSku.imgUrl : prodInfo.mainImgUrl" />
           </view>
           <view class="info">
             <view class="name">{{ prodInfo.name }}</view>
@@ -355,7 +355,7 @@ export default {
             shopCarts.forEach(shopItem => {
                 shopItem.shopCartItem.forEach(prodItem => {
                   if (prodItem.imgUrl.indexOf('http')==-1) {
-                    prodItem.imgUrl = config.resourcesUrl + prodItem.imgUrl
+                    prodItem.imgUrl = prodItem.imgUrl
                   }
                   prodItem.checked = prodItem.isChecked ? true : false
                 })
@@ -372,7 +372,7 @@ export default {
             shopCarts.forEach(shopItem => {
                 shopItem.shopCartItem.forEach(prodItem => {
                   if (prodItem.imgUrl.indexOf('http')==-1) {
-                    prodItem.imgUrl = config.resourcesUrl + prodItem.imgUrl
+                    prodItem.imgUrl = prodItem.imgUrl
                   }
                   if (checkedLog.includes(prodItem.cartItemId)) {
                     prodItem.checked = true

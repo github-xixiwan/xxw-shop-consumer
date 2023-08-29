@@ -546,7 +546,7 @@ export default {
           shopCartOrders.forEach((shopCart, index) => {
               shopCart.shopCartItemVO.forEach(prodItem => {
                 if (prodItem.imgUrl.indexOf('http')===-1) {
-                  prodItem.imgUrl = config.resourcesUrl + prodItem.imgUrl
+                  prodItem.imgUrl = prodItem.imgUrl
                 }
               })
             if (isFirst) {

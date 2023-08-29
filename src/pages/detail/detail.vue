@@ -17,7 +17,7 @@
       circular="true"
     >
       <swiper-item v-for="(img, imgIdx) in imgList" :key="imgIdx" class="item">
-        <image v-if="img" :src="config.resourcesUrl+img" />
+        <image v-if="img" :src="img" />
       </swiper-item>
     </swiper>
 
@@ -56,7 +56,7 @@
       <view class="shop-info">
         <view class="info">
           <view class="img">
-            <image v-if="shopInfo.shopLogo" :src="config.resourcesUrl+shopInfo.shopLogo" />
+            <image v-if="shopInfo.shopLogo" :src="shopInfo.shopLogo" />
           </view>
           <view class="text">
             <view class="name">{{ shopInfo.shopName }}</view>
@@ -107,7 +107,7 @@
       <view class="popup-con-bottom check-sku">
         <view class="goods-box">
           <view class="img">
-            <image v-if="prodInfo.mainImgUrl" :src="config.resourcesUrl+prodInfo.mainImgUrl" />
+            <image v-if="prodInfo.mainImgUrl" :src="prodInfo.mainImgUrl" />
           </view>
           <view class="info">
             <view class="name">{{ prodInfo.name }}</view>

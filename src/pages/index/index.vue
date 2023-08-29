@@ -24,7 +24,7 @@
         circular="true"
       >
         <swiper-item v-for="(imgItem, imgIdx) in indexImgs" :key="imgIdx" class="item" @tap="toProdDetail(imgItem.spuId)">
-          <image :src="config.resourcesUrl+imgItem.imgUrl" />
+          <image :src="imgItem.imgUrl" />
         </swiper-item>
       </swiper>
     </view>
@@ -93,7 +93,7 @@
       <block v-for="(item, index) in categoryProdList" :key="index">
         <view class="item" @tap="toProdDetail(item.spuId)">
           <view class="img">
-            <image :src="config.resourcesUrl+item.mainImgUrl" />
+            <image :src="item.mainImgUrl" />
           </view>
           <view class="text-box">
             <view class="name">{{ item.spuName }}</view>

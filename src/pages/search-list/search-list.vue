@@ -19,7 +19,7 @@
       <view class="shop-info-box">
         <view class="con">
           <view class="logo">
-            <image :src="config.resourcesUrl+shopInfo.shopLogo" />
+            <image :src="shopInfo.shopLogo" />
           </view>
           <view class="text">
             <view class="name">{{ shopInfo.shopName }}</view>
@@ -42,7 +42,7 @@
       <block v-for="(item, index) in prodList" :key="index">
         <view class="item" @tap="toProdDetail(item.spuId)">
           <view class="img">
-            <image :src="config.resourcesUrl+item.mainImgUrl" />
+            <image :src="item.mainImgUrl" />
           </view>
           <view class="text-box">
             <view class="name">{{ item.spuName }}</view>
@@ -70,7 +70,7 @@
         <view class="item">
           <view class="shop-info">
             <view class="logo">
-              <image :src="config.resourcesUrl+item.shopLogo" />
+              <image :src="item.shopLogo" />
             </view>
             <view class="text">
               <view class="name">{{ item.shopName }}</view>
@@ -84,7 +84,7 @@
             <block v-for="(prodItem, prodIndex) in item.spuList" :key="prodIndex">
               <view class="p-item" @tap="toProdDetail(prodItem.spuId)">
                 <view class="img">
-                  <image :src="config.resourcesUrl+prodItem.mainImgUrl" />
+                  <image :src="prodItem.mainImgUrl" />
                 </view>
                 <view class="price">￥{{ wxs.parsePrice(prodItem.priceFee)[0] + '.' + wxs.parsePrice(prodItem.priceFee)[1] }}</view>
               </view>

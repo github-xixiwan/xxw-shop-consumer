@@ -41,7 +41,7 @@
           <view v-if="orderItem.orderItems.length===1" class="single-prod" @tap="toOrderDetail(orderItem.orderId)">
             <block v-for="(prodItem,prodIdx) in orderItem.orderItems" :key="prodIdx">
               <view class="prod-img">
-                <image :src="config.resourcesUrl+prodItem.pic" />
+                <image :src="prodItem.pic" />
               </view>
               <view class="text-box">
                 <view class="name">{{ prodItem.spuName }}</view>
@@ -62,7 +62,7 @@
           <view v-else class="many-prods" @tap="toOrderDetail(orderItem.orderId)">
             <scroll-view scroll-x="true" class="img-box">
               <view v-for="(prodItem,prodIdx) in orderItem.orderItems" :key="prodIdx" class="img">
-                <image :src="config.resourcesUrl+prodItem.pic" />
+                <image :src="prodItem.pic" />
               </view>
             </scroll-view>
           </view>

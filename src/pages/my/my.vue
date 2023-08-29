@@ -3,7 +3,7 @@
     <!-- 用户资料 -->
     <view class="user-box">
       <view class="img" @tap="toUserSettings">
-        <image :src="userInfo.pic?config.resourcesUrl+userInfo.pic:'/static/images/head-sculpture.png'" />
+        <image :src="userInfo.pic?userInfo.pic:'/static/images/head-sculpture.png'" />
       </view>
       <view v-if="isNotLogged" class="text-box" @tap="toLogin">
         <view class="name">立即登录</view>

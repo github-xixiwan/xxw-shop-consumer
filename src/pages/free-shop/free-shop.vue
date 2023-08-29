@@ -176,15 +176,15 @@ export default {
             this.shopName = res.shopName
             this.intro = res.intro
             this.shopUserName = res.username
-            this.shopLogo = config.resourcesUrl+res.shopLogo
+            this.shopLogo = res.shopLogo
             this.shopLogoUrl = res.shopLogo
-            this.idCardFront = config.resourcesUrl+res.identityCardFront
+            this.idCardFront = res.identityCardFront
             this.idCardFrontUrl = res.identityCardFront
-            this.idCardBack = config.resourcesUrl+res.identityCardLater
+            this.idCardBack = res.identityCardLater
             this.idCardBackUrl = res.identityCardLater
-            this.license = config.resourcesUrl+res.businessLicense
+            this.license = res.businessLicense
             this.licenseUrl = res.businessLicense
-            this.mobileBackground = config.resourcesUrl+res.mobileBackgroundPic
+            this.mobileBackground = res.mobileBackgroundPic
             this.mobileBackgroundPic = res.mobileBackgroundPic
             // this.getShopAudit(res.shopStatus)
           } else {

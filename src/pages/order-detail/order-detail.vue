@@ -58,7 +58,7 @@
         <view class="prod-item" @tap="toProdDetail(prodItem.spuId)">
           <view class="info">
             <view class="prod-img">
-              <image :src="config.resourcesUrl+prodItem.pic" />
+              <image :src="prodItem.pic" />
             </view>
             <view class="text-box">
               <view

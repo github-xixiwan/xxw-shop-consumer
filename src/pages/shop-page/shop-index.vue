@@ -4,13 +4,13 @@
       <!-- 头部 -->
       <view class="header">
         <view class="bg">
-          <image :src="config.resourcesUrl+shopInfo.mobileBackgroundPic" />
+          <image :src="shopInfo.mobileBackgroundPic" />
         </view>
       </view>
       <!-- 店铺信息 -->
       <view class="shop-info">
         <view class="logo">
-          <image :src="config.resourcesUrl+shopInfo.shopLogo" />
+          <image :src="shopInfo.shopLogo" />
         </view>
         <view class="text-box">
           <view class="name">{{ shopInfo.shopName }}</view>
@@ -33,7 +33,7 @@
           <block v-for="(item,index) in prodList" :key="index">
             <view class="item" @tap="detail(item.spuId)">
               <view class="img">
-                <image :src="config.resourcesUrl+item.mainImgUrl" />
+                <image :src="item.mainImgUrl" />
               </view>
               <view class="text-box">
                 <view class="name">{{ item.spuName }}</view>

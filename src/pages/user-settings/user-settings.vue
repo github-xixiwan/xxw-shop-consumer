@@ -4,7 +4,7 @@
       <view class="item" @tap="getUploadImg()">
         <view class="text">头像</view>
         <view class="img">
-          <image v-if="userInfo.pic" :src="config.resourcesUrl+userInfo.pic" />
+          <image v-if="userInfo.pic" :src="userInfo.pic" />
           <image v-else src="/static/images/head-sculpture.png" />
         </view>
         <view class="text-arrow" />
